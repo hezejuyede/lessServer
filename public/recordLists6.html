@@ -38,18 +38,18 @@
 				<div class="xianchang-v1">
 					<div class="tab-my-new">
 						<div class="clearFlex tab-xc">
-							<a :class="{'active': selectTab === 1}" href="/recordLists2.html" @click="changeTab(1)">全部</a>
-							<a :class="{'active': selectTab === 2}" href="/recordLists3.html" @click="changeTab(2)">电能表</a>
-							<a :class="{'active': selectTab === 3}" href="/recordLists4.html" @click="changeTab(3)">互感器</a>
-							<a :class="{'active': selectTab === 4}" href="/recordLists5.html" @click="changeTab(4)">采集终端</a>
-							<a :class="{'active': selectTab === 5}" href="/recordLists6.html" @click="changeTab(5)">SIM卡</a>
+							<a :class="{'active': selectTab === 1}" @click="changeTab(1)">全部</a>
+							<a :class="{'active': selectTab === 2}" @click="changeTab(2)">电能表</a>
+							<a :class="{'active': selectTab === 3}" @click="changeTab(3)">互感器</a>
+							<a :class="{'active': selectTab === 4}" @click="changeTab(4)">采集终端</a>
+							<a :class="{'active': selectTab === 5}" @click="changeTab(5)">SIM卡</a>
 						</div>
 					</div>
 				</div>
-				<div class="container m-scro5" id="itemLists5">
-					<ul class="meter-view ul-scroll05">
+				<div class="container m-scro1" id="itemLists5" >
+					<ul class="meter-view ul-scroll01">
 						<block v-for="(item,index) in SIMCardArr" :key="index">
-							<li v-if="item.assetName === 'sim卡'">
+							<li v-if="item.assetName == 'sim卡'">
 								<div class="">
 									<div class="meter-header">
 										<p><i class="left-tab"></i><span>SIM卡</span></p>
