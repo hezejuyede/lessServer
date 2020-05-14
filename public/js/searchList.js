@@ -18,26 +18,32 @@ var vm = new Vue({
     },
 
     created: function () {
-		this.getTabIndex();
-       /* var that = this;
+
+        var that = this;
         document.addEventListener('PHJSReady', function (content) {
             //在这里面调用其它组件方法
             that.getTabIndex();
-        });*/
+        });
     },
 
     methods: {
         getTabIndex: function () {
             var tabIndex = localStorage.getItem('tabIndex');
             var name = localStorage.getItem('assetName');
-            this.selectTab = parseInt(tabIndex);
-            if(name !==null && name !== ""){
-				this.assetName = name;
-			}
-            else {
-				this.assetName =""
-			}
-            console.log(this.assetName)
+
+            if (name !== null && name !== "") {
+                this.selectTab = parseInt(tabIndex);
+            } else {
+                this.selectTab = 1
+            }
+
+
+            if (name !== null && name !== "") {
+                this.assetName = name;
+            } else {
+                this.assetName = ""
+            }
+
             this.recodeUserTab();
 
         },
@@ -50,13 +56,13 @@ var vm = new Vue({
             switch (index) {
                 case 1:
                     self.assetName = '';
-                    localStorage.setItem('assetName', self.assetName);
-					var name = localStorage.getItem('assetName');
-                   /* var url = "microapp://" + storate.getItem("mappId") + "/recordLists2.html";
+                    localStorage.setItem('assetName', "");
+                    localStorage.getItem('assetName');
+                    var url = "microapp://" + storate.getItem("mappId") + "/recordLists2.html";
                     PHWindow.open({
                         "url": url
                     });
-                    break;*/
+                    break;
                 case 2:
                     self.assetName = '电能表';
                     localStorage.setItem('assetName', self.assetName);
