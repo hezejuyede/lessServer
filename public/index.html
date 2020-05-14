@@ -1,30 +1,57 @@
-<!doctype html>
-<html lang="zh-cn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>11</title>
-    <link rel="stylesheet" type="text/css" href="./css/base.css">
-    <link rel="stylesheet/less" type="text/css" href="./css/index.less">
-    <script src="./js/less.min.js"></script>
-    <script src="./js/html5shiv.js"></script>
-    <script src="./js/jquery-3.1.1.min.js"></script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>资产查询</title>
+		<link rel="stylesheet" href="common_assets/css/border.css">
+		<link rel="stylesheet" href="common_assets/css/reset.css">
+		<link rel="stylesheet" href="common_assets/font/iconfont.css">
+		<link rel="stylesheet" href="common_assets/css/common.css">
+		<link rel="stylesheet" href="common_assets/css/fakeLoader.css">
+		<link rel="stylesheet" href="common_assets/css/vue.css">
+		<link rel="stylesheet" href="css/scrollBar.css">
+		<link rel="stylesheet" href="css/inside.css">
+		<link rel="stylesheet" href="css/xianchangkaika.css">
+		<script src="common_assets/js/jquery.js"></script>
+		<script src="common_assets/js/fakeLoader.min.js"></script>
+		<script src="common_assets/js/vue.min.js"></script>
+		<script src="common_assets/js/lib.js"></script>
+		<script src="common_assets/js/vconsole.min.js"></script>
+		<script src="common_assets/js/wei_common.js"></script>
+	</head>
+	<body class="bd1">
+		<div class="fakeloader"></div>
+		<div id="app" v-cloak>
+			<div class="hd-mob">
+				<i class="back iconfont icon-xiazai6 js-back"></i>
+				<div class="headTitle">资产查询</div>
+			</div>
+			<div class="main">
+				<div class="image-con">
+					<img src="images/icon-id.png" class="image-id" />
+				</div>
+				<div class="num-input">
+					<label for="" class="label-num"></label>
+					<input type="number" v-model="inputCode" placeholder="请输入" />
+				</div>
+				<div class="tip-con">
+					<p class="tip-tit">温馨提示：</p>
+					<div class="tip-det">本功能可通过输入或扫描需要查询的设备资产编号，查询电能表、互感器、计量箱、采集终端、SIM卡等信息。</div>
+				</div>
+				<a href="javascript:;" @click="assetList()" class="a-next">查询</a>
+			</div>
+		</div>
+		<script src="js/index.js"></script>
+		<script type="text/javascript">
+			document.addEventListener(('PHJSReady', function(content) {
+				var msg = PHWindow.getParams();
+				if (msg.mappId != undefined && msg.mappId != "") {
+					storate.setItem("mappId", msg.mappId);
+				}
+			}))
+		</script>
+	</body>
 
-</head>
-<body>
-<div class="a">
-    <div class="b"></div>
-</div>
-<script>
-    let a = {"a": 1, "b": 2, "c": 3}
-    let b = {"c": 1, "d": 3};
-    let d = {"a": 3, "e": 6, "f": 9};
-    let e = {"g": 12};
-    let g = {"ff":32323}
-    let c = Object.assign({}, a, b, d, e,g);
-    console.log(c)
-</script>
-</body>
 </html>
